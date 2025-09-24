@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: 'Build and deploy JAR app to Azure Web App: movtotrackzone-rm554764'
 
 on:
@@ -26,11 +23,11 @@ jobs:
       # Passo 3: Build com Maven no diretório correto e com variáveis de ambiente
       - name: Build with Maven
         run: mvn clean install
+        working-directory: ./universidade_fiap
         env:
           SPRING_DATASOURCE_URL: ${{ secrets.SPRING_DATASOURCE_URL }}
           SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
           SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
-
 
       # Passo 4: Deploy no Azure Web App
       - name: Deploy to Azure Web App
@@ -39,4 +36,4 @@ jobs:
           app-name: 'movtotrackzone-rm554764'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_8f10b9cba95544bd850a070094e6e8a7 }}
-          package: '${{ github.workspace }}/challenge-java-3/target/*.jar'
+          package: '${{ github.workspace }}/universidade_fiap/target/*.jar'
