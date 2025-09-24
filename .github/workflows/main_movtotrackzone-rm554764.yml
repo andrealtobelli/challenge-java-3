@@ -26,11 +26,11 @@ jobs:
       # Passo 3: Build com Maven no diretório correto e com variáveis de ambiente
       - name: Build with Maven
         run: mvn clean install
-        working-directory: ./challenge-java-3
         env:
           SPRING_DATASOURCE_URL: ${{ secrets.SPRING_DATASOURCE_URL }}
           SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
           SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
+
 
       # Passo 4: Deploy no Azure Web App
       - name: Deploy to Azure Web App
