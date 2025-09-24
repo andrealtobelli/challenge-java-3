@@ -57,6 +57,15 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <!-- Repositório da Microsoft para o driver JDBC -->
+        <repository>
+            <id>microsoft</id>
+            <name>Microsoft Maven Repository</name>
+            <url>https://maven.microsoft.com/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
