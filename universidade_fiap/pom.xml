@@ -16,7 +16,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.5</version>
-        <relativePath/> <!-- Busca no repositório central -->
+        <relativePath/>
     </parent>
 
     <properties>
@@ -36,11 +36,11 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- Driver JDBC SQL Server -->
+        <!-- Driver JDBC SQL Server (versão confiável no Maven Central) -->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <version>12.8.1.jre17</version>
+            <version>10.2.1.jre17</version>
         </dependency>
 
         <!-- Flyway (migração de banco) -->
@@ -56,15 +56,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <!-- Repositório da Microsoft para o driver JDBC -->
-        <repository>
-            <id>microsoft</id>
-            <name>Microsoft Maven Repository</name>
-            <url>https://maven.microsoft.com/repository/maven-public/</url>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>
